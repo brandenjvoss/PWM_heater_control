@@ -1,0 +1,513 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:Thermistor_PTC Therm
+U 1 1 622C81B7
+P 7950 4250
+F 0 "Therm" H 8048 4296 50  0000 L CNN
+F 1 "Thermistor_PTC" H 8048 4205 50  0000 L CNN
+F 2 "" H 8000 4050 50  0001 L CNN
+F 3 "~" H 7950 4250 50  0001 C CNN
+	1    7950 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 4200 6100 4200
+$Comp
+L Transistor_FET:IRLZ44N N-MOS
+U 1 1 624025DC
+P 9400 4200
+F 0 "N-MOS" H 9604 4246 50  0000 L CNN
+F 1 "IRLZ44N" H 9604 4155 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 9650 4125 50  0001 L CIN
+F 3 "http://www.irf.com/product-info/datasheets/data/irlz44n.pdf" H 9400 4200 50  0001 L CNN
+	1    9400 4200
+	1    0    0    -1  
+$EndComp
+Text Label 7200 4600 0    50   ~ 0
+Analog_read
+Wire Wire Line
+	6100 4200 6100 3400
+Wire Wire Line
+	6850 3500 6850 3600
+Wire Wire Line
+	9500 4400 9500 4650
+Text Label 6850 3550 0    50   ~ 0
+Sensor_pwr_supply
+$Comp
+L MCU_Module:Arduino_Nano_v3.x Arduino
+U 1 1 624025F8
+P 6650 4600
+F 0 "Arduino" H 6650 3511 50  0000 C CNN
+F 1 "Arduino_Nano_v3.x" H 6650 3420 50  0000 C CNN
+F 2 "Module:Arduino_Nano" H 6650 4600 50  0001 C CIN
+F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 6650 4600 50  0001 C CNN
+	1    6650 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 3400 8300 3400
+Wire Wire Line
+	8300 3400 8300 4200
+Connection ~ 9500 4650
+$Comp
+L ECE:RES Res3
+U 1 1 62402620
+P 9250 4650
+F 0 "Res3" H 9250 4844 40  0000 C CNN
+F 1 "10k" H 9250 4768 40  0000 C CNN
+F 2 "" H 9250 4720 30  0000 C CNN
+F 3 "" V 9250 4650 30  0000 C CNN
+	1    9250 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L ECE:RES Res1
+U 1 1 6241A0D5
+P 7950 5050
+F 0 "Res1" V 7988 4970 40  0000 R CNN
+F 1 "922" V 7912 4970 40  0000 R CNN
+F 2 "" H 7950 5120 30  0000 C CNN
+F 3 "" V 7950 5050 30  0000 C CNN
+	1    7950 5050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6850 3500 7950 3500
+Wire Wire Line
+	7950 3500 7950 4100
+Wire Wire Line
+	7950 4400 7950 4600
+Connection ~ 7950 4600
+Wire Wire Line
+	7950 4600 7950 4800
+Wire Wire Line
+	6750 5600 6750 6000
+Wire Wire Line
+	9500 4650 9500 6000
+Wire Wire Line
+	7950 5300 7950 6000
+$Comp
+L power:GNDREF #PWR?
+U 1 1 6243186B
+P 7950 6000
+F 0 "#PWR?" H 7950 5750 50  0001 C CNN
+F 1 "GNDREF" H 7955 5827 50  0000 C CNN
+F 2 "" H 7950 6000 50  0001 C CNN
+F 3 "" H 7950 6000 50  0001 C CNN
+	1    7950 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 624330A4
+P 9500 6000
+F 0 "#PWR?" H 9500 5750 50  0001 C CNN
+F 1 "GNDREF" H 9505 5827 50  0000 C CNN
+F 2 "" H 9500 6000 50  0001 C CNN
+F 3 "" H 9500 6000 50  0001 C CNN
+	1    9500 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 62433AC0
+P 6750 6000
+F 0 "#PWR?" H 6750 5750 50  0001 C CNN
+F 1 "GNDREF" H 6755 5827 50  0000 C CNN
+F 2 "" H 6750 6000 50  0001 C CNN
+F 3 "" H 6750 6000 50  0001 C CNN
+	1    6750 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7150 4600 7950 4600
+$Comp
+L power:GNDREF #PWR?
+U 1 1 6242AACF
+P 1900 3950
+F 0 "#PWR?" H 1900 3700 50  0001 C CNN
+F 1 "GNDREF" H 1905 3777 50  0000 C CNN
+F 2 "" H 1900 3950 50  0001 C CNN
+F 3 "" H 1900 3950 50  0001 C CNN
+	1    1900 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 6242A453
+P 3350 3950
+F 0 "#PWR?" H 3350 3700 50  0001 C CNN
+F 1 "GNDREF" H 3355 3777 50  0000 C CNN
+F 2 "" H 3350 3950 50  0001 C CNN
+F 3 "" H 3350 3950 50  0001 C CNN
+	1    3350 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR?
+U 1 1 62429DA5
+P 4650 3950
+F 0 "#PWR?" H 4650 3700 50  0001 C CNN
+F 1 "GNDREF" H 4655 3777 50  0000 C CNN
+F 2 "" H 4650 3950 50  0001 C CNN
+F 3 "" H 4650 3950 50  0001 C CNN
+	1    4650 3950
+	1    0    0    -1  
+$EndComp
+Connection ~ 4650 2600
+Wire Wire Line
+	4650 3950 4650 2600
+Wire Wire Line
+	1900 3550 1900 3950
+$Comp
+L ECE:RES Res2
+U 1 1 62401CDB
+P 4400 2600
+F 0 "Res2" H 4400 2794 40  0000 C CNN
+F 1 "10k" H 4400 2718 40  0000 C CNN
+F 2 "" H 4400 2670 30  0000 C CNN
+F 3 "" V 4400 2600 30  0000 C CNN
+	1    4400 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 1350 4650 1300
+$Comp
+L ECE:RES Heater1
+U 1 1 623FE17E
+P 4400 1600
+F 0 "Heater1" V 4438 1520 40  0000 R CNN
+F 1 "48" V 4362 1520 40  0000 R CNN
+F 2 "" H 4400 1670 30  0000 C CNN
+F 3 "" V 4400 1600 30  0000 C CNN
+	1    4400 1600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3450 1350 3450 2150
+$Comp
+L MCU_Module:Arduino_Nano_v3.x Arduino
+U 1 1 622C32E8
+P 1800 2550
+F 0 "Arduino" H 1800 1461 50  0000 C CNN
+F 1 "Arduino_Nano_v3.x" H 1800 1370 50  0000 C CNN
+F 2 "Module:Arduino_Nano" H 1800 2550 50  0001 C CIN
+F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 1800 2550 50  0001 C CNN
+	1    1800 2550
+	1    0    0    -1  
+$EndComp
+Text Label 3350 3050 0    50   ~ 0
+GND
+Text Label 3050 2700 0    50   ~ 0
+DQ
+Text Label 2600 3000 0    50   ~ 0
+VDD
+Wire Wire Line
+	4650 2350 4650 2600
+Wire Wire Line
+	4650 1950 4650 1850
+$Comp
+L Transistor_FET:IRLZ44N N-MOS
+U 1 1 622FC12B
+P 4550 2150
+F 0 "N-MOS" H 4754 2196 50  0000 L CNN
+F 1 "IRLZ44N" H 4754 2105 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 4800 2075 50  0001 L CIN
+F 3 "http://www.irf.com/product-info/datasheets/data/irlz44n.pdf" H 4550 2150 50  0001 L CNN
+	1    4550 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+24V #PWR?
+U 1 1 622FE762
+P 4650 1000
+F 0 "#PWR?" H 4650 850 50  0001 C CNN
+F 1 "+24V" H 4665 1173 50  0000 C CNN
+F 2 "" H 4650 1000 50  0001 C CNN
+F 3 "" H 4650 1000 50  0001 C CNN
+	1    4650 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Sensor_Temperature:DS18B20 temp_sensor
+U 1 1 622C6906
+P 3050 3000
+F 0 "temp_sensor" H 2820 3046 50  0000 R CNN
+F 1 "DS18B20" H 2820 2955 50  0000 R CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 2050 2750 50  0001 C CNN
+F 3 "http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf" H 2900 3250 50  0001 C CNN
+	1    3050 3000
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 2300 2650
+NoConn ~ 2300 2750
+NoConn ~ 2300 2850
+NoConn ~ 2300 2950
+NoConn ~ 2300 3050
+NoConn ~ 2300 3150
+NoConn ~ 2300 3250
+NoConn ~ 2300 2350
+NoConn ~ 2300 2050
+NoConn ~ 2300 1950
+NoConn ~ 1900 1550
+NoConn ~ 1300 1950
+NoConn ~ 1300 2050
+NoConn ~ 1300 2350
+NoConn ~ 1300 2550
+NoConn ~ 1300 2650
+NoConn ~ 1300 2750
+NoConn ~ 1300 2850
+NoConn ~ 1300 2950
+NoConn ~ 1300 3050
+NoConn ~ 1300 3150
+NoConn ~ 1300 3250
+NoConn ~ 1800 3550
+Wire Wire Line
+	1700 1550 1700 1300
+Wire Wire Line
+	1700 1300 1000 1300
+Wire Wire Line
+	1000 1300 1000 1000
+Wire Wire Line
+	6550 3600 6550 3350
+Wire Wire Line
+	5850 3350 5850 3050
+Wire Wire Line
+	5850 3350 6550 3350
+$Comp
+L power:+5V #PWR?
+U 1 1 62460F63
+P 5850 3050
+F 0 "#PWR?" H 5850 2900 50  0001 C CNN
+F 1 "+5V" H 5865 3223 50  0000 C CNN
+F 2 "" H 5850 3050 50  0001 C CNN
+F 3 "" H 5850 3050 50  0001 C CNN
+	1    5850 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 62461CA5
+P 1000 1000
+F 0 "#PWR?" H 1000 850 50  0001 C CNN
+F 1 "+5V" H 1015 1173 50  0000 C CNN
+F 2 "" H 1000 1000 50  0001 C CNN
+F 3 "" H 1000 1000 50  0001 C CNN
+	1    1000 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L ECE:RES Heater2
+U 1 1 6248C92D
+P 4900 1600
+F 0 "Heater2" V 4938 1520 40  0000 R CNN
+F 1 "48" V 4862 1520 40  0000 R CNN
+F 2 "" H 4900 1670 30  0000 C CNN
+F 3 "" V 4900 1600 30  0000 C CNN
+	1    4900 1600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4400 1350 4650 1350
+Connection ~ 4650 1350
+Wire Wire Line
+	4650 1350 4900 1350
+Wire Wire Line
+	4400 1850 4650 1850
+Connection ~ 4650 1850
+Wire Wire Line
+	4650 1850 4900 1850
+Wire Wire Line
+	9500 3400 9500 3350
+$Comp
+L ECE:RES Heater1
+U 1 1 624914EF
+P 9250 3650
+F 0 "Heater1" V 9288 3570 40  0000 R CNN
+F 1 "48" V 9212 3570 40  0000 R CNN
+F 2 "" H 9250 3720 30  0000 C CNN
+F 3 "" V 9250 3650 30  0000 C CNN
+	1    9250 3650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+24V #PWR?
+U 1 1 624914FA
+P 9500 3050
+F 0 "#PWR?" H 9500 2900 50  0001 C CNN
+F 1 "+24V" H 9515 3223 50  0000 C CNN
+F 2 "" H 9500 3050 50  0001 C CNN
+F 3 "" H 9500 3050 50  0001 C CNN
+	1    9500 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L ECE:RES Heater2
+U 1 1 62491504
+P 9750 3650
+F 0 "Heater2" V 9788 3570 40  0000 R CNN
+F 1 "48" V 9712 3570 40  0000 R CNN
+F 2 "" H 9750 3720 30  0000 C CNN
+F 3 "" V 9750 3650 30  0000 C CNN
+	1    9750 3650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9250 3400 9500 3400
+Connection ~ 9500 3400
+Wire Wire Line
+	9500 3400 9750 3400
+Wire Wire Line
+	9250 3900 9500 3900
+Wire Wire Line
+	9500 4000 9500 3900
+Connection ~ 9500 3900
+Wire Wire Line
+	9500 3900 9750 3900
+$Comp
+L ECE:RES Res2
+U 1 1 6249DEDC
+P 8900 4200
+F 0 "Res2" H 8900 4394 40  0000 C CNN
+F 1 "220" H 8900 4318 40  0000 C CNN
+F 2 "" H 8900 4270 30  0000 C CNN
+F 3 "" V 8900 4200 30  0000 C CNN
+	1    8900 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L ECE:RES Res1
+U 1 1 6249EA09
+P 4050 2150
+F 0 "Res1" H 4050 2344 40  0000 C CNN
+F 1 "220" H 4050 2268 40  0000 C CNN
+F 2 "" H 4050 2220 30  0000 C CNN
+F 3 "" V 4050 2150 30  0000 C CNN
+	1    4050 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9150 4200 9200 4200
+Wire Wire Line
+	4300 2150 4350 2150
+Wire Wire Line
+	3800 2150 3750 2150
+Wire Wire Line
+	3750 2150 3750 2600
+Wire Wire Line
+	3750 2600 4150 2600
+Wire Wire Line
+	8650 4200 8600 4200
+Wire Wire Line
+	8600 4200 8600 4650
+Wire Wire Line
+	8600 4650 9000 4650
+Wire Wire Line
+	8300 4200 8600 4200
+Connection ~ 8600 4200
+Wire Wire Line
+	3450 2150 3750 2150
+Connection ~ 3750 2150
+$Comp
+L Device:Fuse F
+U 1 1 624A8BAF
+P 4650 1150
+F 0 "F" H 4710 1196 50  0000 L CNN
+F 1 "2A" H 4710 1105 50  0000 L CNN
+F 2 "" V 4580 1150 50  0001 C CNN
+F 3 "~" H 4650 1150 50  0001 C CNN
+	1    4650 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Fuse F
+U 1 1 624A95E4
+P 9500 3200
+F 0 "F" H 9560 3246 50  0000 L CNN
+F 1 "50A" H 9560 3155 50  0000 L CNN
+F 2 "" V 9430 3200 50  0001 C CNN
+F 3 "~" H 9500 3200 50  0001 C CNN
+	1    9500 3200
+	1    0    0    -1  
+$EndComp
+NoConn ~ 7150 4000
+NoConn ~ 7150 4100
+NoConn ~ 6750 3600
+NoConn ~ 6150 4000
+NoConn ~ 6150 4100
+NoConn ~ 6150 4300
+NoConn ~ 6150 4400
+NoConn ~ 6150 4500
+NoConn ~ 6150 4600
+NoConn ~ 6150 4700
+NoConn ~ 6150 4800
+NoConn ~ 6150 4900
+NoConn ~ 6150 5000
+NoConn ~ 6150 5100
+NoConn ~ 6150 5200
+NoConn ~ 6150 5300
+NoConn ~ 6650 5600
+NoConn ~ 7150 5300
+NoConn ~ 7150 5200
+NoConn ~ 7150 5100
+NoConn ~ 7150 5000
+NoConn ~ 7150 4900
+NoConn ~ 7150 4800
+NoConn ~ 7150 4700
+NoConn ~ 7150 4400
+$Comp
+L ECE:RES Res3
+U 1 1 6269E146
+P 2800 2150
+F 0 "Res3" H 2800 2344 40  0000 C CNN
+F 1 "4.7k" H 2800 2268 40  0000 C CNN
+F 2 "" H 2800 2220 30  0000 C CNN
+F 3 "" V 2800 2150 30  0000 C CNN
+	1    2800 2150
+	1    0    0    -1  
+$EndComp
+NoConn ~ 1300 2150
+NoConn ~ 2300 2550
+Wire Wire Line
+	3350 3000 3350 3950
+Wire Wire Line
+	1300 2450 1150 2450
+Wire Wire Line
+	1150 2450 1150 1350
+Wire Wire Line
+	1150 1350 3450 1350
+Wire Wire Line
+	1300 2250 1250 2250
+Wire Wire Line
+	1250 2250 1250 1450
+Wire Wire Line
+	3050 1450 3050 2150
+Wire Wire Line
+	1250 1450 3050 1450
+Connection ~ 3050 2150
+Wire Wire Line
+	3050 2150 3050 2700
+Wire Wire Line
+	2550 2150 2550 3000
+Wire Wire Line
+	2550 3000 2750 3000
+Wire Wire Line
+	2000 1550 2550 1550
+Wire Wire Line
+	2550 1550 2550 2150
+Connection ~ 2550 2150
+$EndSCHEMATC
